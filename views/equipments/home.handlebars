@@ -1,8 +1,8 @@
 <div class="info-content">
   <section class="dashboard">
-    <div class="right">Em dia: 1</div>
+    <div class="right">Em dia: 0</div>
     <div class="atention">Atenção: 0</div>
-    <div class="critical">Crítico: 1</div>
+    <div class="critical">Crítico: 0</div>
   </section>
 
   <section class="tableData">
@@ -17,28 +17,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Lavadora Industrial 01</td>
-            <td>02/02/2026</td>
-            <td><span class="badge badge-danger">Crítico</span></td>
-            <td>
-              <form action="/equipments/delete" method="post">
-                <input type="hidden" name="id" value="{{this.id}}" />
-                <input type="submit" value="Excluir" class="btn-action" />
-              </form>
-            </td>
-          </tr>
-          <tr>
-            <td>Ar Condicionado Central</td>
-            <td>15/03/2026</td>
-            <td><span class="badge badge-success">Em Dia</span></td>
-            <td>
-              <form action="/equipments/delete" method="post">
-                <input type="hidden" name="id" value="{{this.id}}" />
-                <input type="submit" value="Excluir" class="btn-action" />
-              </form>
-            </td>
-          </tr>
+          {{#each equipments}}
+            <tr>
+              <td>{{this.name}}</td>
+              <td>{{this.next_revision_date}}</td>
+              <td><span class="badge">{{this.status}}</span></td>
+              <td>
+                <form action="/equipments/delete" method="post">
+                  <input type="hidden" name="id" value="{{this.id}}" />
+                  <input type="submit" value="Excluir" class="btn-action" />
+                </form>
+                <a
+                  href="/equipments/revised/{{this.id}}"
+                  class="btn-action"
+                >Revisar</a>
+              </td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>

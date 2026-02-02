@@ -1,0 +1,28 @@
+<div class="equipments-form-container">
+  <h2>Adicionando um equipamento</h2>
+  <form action="/equipments/revised/{{id}}" method="post">
+    <div class="form-control">
+      <label for="service_description">Descreva como foi a manutenção:</label>
+      <input
+        type="text"
+        name="service_description"
+        placeholder="Insira o resumo aqui..."
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="technical">Nome do técnico responsável:</label>
+      <input
+        type="text"
+        name="technical"
+        placeholder="Insira o nome do técnico..."
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="revision">Data da revisão:</label>
+      <input type="date" name="revision" required />
+    </div>
+    <button type="submit" class="btn-submit">Cadastrar Equipamento</button>
+  </form>
+</div>

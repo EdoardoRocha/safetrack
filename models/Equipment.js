@@ -10,7 +10,11 @@ const Equipment = db.define('Equipment', {
         type: DataTypes.STRING
     },
     last_revision_date: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
+        require: true
+    },
+    next_revision_date: {
+        type: DataTypes.STRING,
         require: true
     },
     day_frequency: {

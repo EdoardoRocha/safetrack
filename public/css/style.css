@@ -191,7 +191,9 @@ tbody tr:hover {
   background-color: #f1f5f9;
   transition: background 0.2s;
 }
-
+a {
+  text-decoration: none;
+}
 /* Estilização dos Status (Badges) */
 .badge {
   padding: 4px 12px;
@@ -222,6 +224,7 @@ tbody tr:hover {
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.8rem;
+  margin-bottom: 12px;
 }
 
 .btn-action:hover {

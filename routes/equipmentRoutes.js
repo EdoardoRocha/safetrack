@@ -9,6 +9,7 @@ router.get("/", EquipmentController.showEquipments);
 router.get("/add", EquipmentController.createEquipments);
 router.post("/add", EquipmentController.createEquipmentsSave);
 router.post("/delete", EquipmentController.deleteEquipments);
-
+router.get("/revised/:id", EquipmentController.revisedEquipments);
+router.post("/revised/:id", EquipmentController.revisedEquipmentsSave);
 
 export default router;
