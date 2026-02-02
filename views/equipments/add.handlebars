@@ -1,0 +1,51 @@
+<div class="equipments-form-container">
+  <h2>Adicionando um equipamento</h2>
+  <form action="/equipments/add" method="post">
+    <div class="form-control">
+      <label for="name">Nome do equipamento:</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Insira o nome do equipamento aqui..."
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="category">Categoria do equipamento:</label>
+      <input
+        type="text"
+        name="category"
+        placeholder="Insira a categoria aqui..."
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="revision">Data da última revisão (Se feita):</label>
+      <input
+        type="date"
+        name="revision"
+        placeholder="Insira o nome do equipamento aqui..."
+        
+      />
+    </div>
+    <div class="form-control">
+      <label for="frequency">Frequência para revisão em dias:</label>
+      <input
+        type="number"
+        name="frequency"
+        placeholder="Insira a frequência em dias da revisão do equipamento..."
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="status">Estado Operacional:</label>
+      <select name="status" id="status" required>
+        <option value="ativo">Ativo (Operando)</option>
+        <option value="manutencao">Em Manutenção</option>
+        <option value="inativo">Inativo / Parado</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-submit">Cadastrar Equipamento</button>
+  </form>
+</div>

@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  --color-1: #1e293b;
+  --color-2: #3b82f6;
+  --color-3: #f8fafc;
+  --color-4: #10b981;
+  --color-5: #f59e0b;
+  --color-6: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "header header"
+    "content content";
+}
+
+header.header {
+  grid-area: header;
+  background-color: #ffffff; /* Branco */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--color-3);
+}
+
+header.header .insert-button a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+header.header .icon-header a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.5s;
+}
+
+.insert-button {
+  /* Cores e Tipografia */
+  background-color: #3b82f6; /* Action Blue */
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  /* Espaçamento e Forma */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px; /* Arredondado moderno */
+
+  /* Alinhamento e Interação */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado de Hover (Ao passar o mouse) */
+.insert-button:hover {
+  background-color: #2563eb; /* Um azul um pouco mais escuro */
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px); /* Leve elevação */
+}
+
+/* Estado de Active (Ao clicar) */
+.insert-button:active {
+  transform: translateY(0);
+}
+
+/* Acessibilidade - Estado de Focus */
+.insert-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4); /* Halo azul suave */
+}
+
+nav.nav {
+  grid-area: nav;
+  background-color: var(--color-1); /* Deep Navy que sugerimos */
+  color: white;
+  padding: 20px;
+}
+
+main.content {
+  grid-area: content;
+  background-color: var(--color-3);
+
+  /* Centraliza o formulário no meio da área disponível */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  height: calc(100vh - 80px); /* Ocupa exatamente o que sobra do header */
+  overflow: hidden;
+}
+
+main.content .dashboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Dá um espaço entre os cards */
+  margin-bottom: 40px;
+}
+
+main.content .dashboard div.right {
+  background: #d1fae5;
+  color: #065f46;
+  height: 40px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+main.content .dashboard div.atention {
+  background: #fef3c7;
+  color: #92400e;
+  height: 40px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+main.content .dashboard div.critical {
+  background: #fee2e2;
+  color: #991b1b;
+  height: 40px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+/* Container para dar o arredondado e a sombra */
+.table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-grow: 1;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaços entre as bordas */
+  text-align: left;
+}
+
+/* Estilo do Cabeçalho */
+thead {
+  background-color: #f1f5f9; /* Cinza bem claro */
+  color: #475569; /* Cinza azulado */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+th,
+td {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Zebra Stripes - Linhas alternadas */
+tbody tr:nth-child(even) {
+  background-color: var(--color-3);
+}
+
+/* Efeito de Hover ao passar o mouse */
+tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background 0.2s;
+}
+
+/* Estilização dos Status (Badges) */
+.badge {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: #d1fae5;
+  color: #065f46;
+} /* Verde */
+.badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+} /* Vermelho */
+.badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+} /* Amarelo */
+
+/* Botão de Ação */
+.btn-action {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.btn-action:hover {
+  background: #2563eb;
+}
+
+/* Add equipments  */
+
+/* Container Principal do Formulário */
+.equipments-form-container {
+  max-width: 450px; /* Reduzi um pouco a largura para ficar mais elegante */
+  width: 90%;
+
+  /* Limita a altura para não estourar a tela */
+  max-height: 80vh;
+
+  /* Ativa o scroll interno APENAS na vertical se o conteúdo crescer */
+  overflow-y: auto;
+  overflow-x: hidden; /* Garante que não apareça scroll lateral */
+
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.equipments-form-container h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Organização de cada grupo de Label/Input */
+.form-control {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilização das Labels */
+.form-control label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+/* Estilização dos Inputs e do Select */
+.form-control input,
+.form-control select {
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+}
+
+/* Feedback de Foco (Quando o usuário clica no campo) */
+.form-control input:focus,
+.form-control select:focus {
+  outline: none;
+  border-color: #3b82f6; /* Action Blue */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.equipments-form-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.equipments-form-container::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+  border-radius: 10px;
+}
+/* Estilo do Botão de Enviar (Adicione no seu HTML) */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #2563eb;
+}
+
+/* Pequeno ajuste para o input de data e número para não ficarem gigantes */
+input[type="date"],
+input[type="number"] {
+  cursor: pointer;
+}
