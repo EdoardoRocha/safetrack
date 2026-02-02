@@ -31,4 +31,16 @@ export default class EquipmentController {
             console.error(error)
         }
     }
+
+    static async deleteEquipments(req, res) {
+        const { id } = req.body;
+
+        try {
+            await Equipment.destroy({ where: { id } })
+
+            res.send("Deu certo!")
+        } catch (error) {
+            console.error(error)
+        }
+    }
 }

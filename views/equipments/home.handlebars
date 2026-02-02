@@ -21,13 +21,23 @@
             <td>Lavadora Industrial 01</td>
             <td>02/02/2026</td>
             <td><span class="badge badge-danger">Crítico</span></td>
-            <td><button class="btn-action">Revisar</button></td>
+            <td>
+              <form action="/equipments/delete" method="post">
+                <input type="hidden" name="id" value="{{this.id}}" />
+                <input type="submit" value="Excluir" class="btn-action" />
+              </form>
+            </td>
           </tr>
           <tr>
             <td>Ar Condicionado Central</td>
             <td>15/03/2026</td>
             <td><span class="badge badge-success">Em Dia</span></td>
-            <td><button class="btn-action">Revisar</button></td>
+            <td>
+              <form action="/equipments/delete" method="post">
+                <input type="hidden" name="id" value="{{this.id}}" />
+                <input type="submit" value="Excluir" class="btn-action" />
+              </form>
+            </td>
           </tr>
         </tbody>
       </table>
